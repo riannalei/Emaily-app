@@ -4,7 +4,12 @@ const requireCredits = require('../middlewares/requireCredits');
 const Mailer = require('../services/Mailer');
 const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
+// This ensures the Survey model is registered before it's used
+require('../models/Survey'); // This line registers the 'surveys' model
+
+// Now you can safely retrieve the model
 const Survey = mongoose.model('surveys');
+
 
 module.exports = (app) => {
   app.get('/api/surveys/thanks', (req, res) => {
