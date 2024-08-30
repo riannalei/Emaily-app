@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "8.1.1",
-    "npm": "5.0.3"
+    "node": "20.15.0",
+    "npm": "10.7.0"
   },
   "scripts": {
     "start": "node index.js",
-    "server": "PORT=3001 nodemon index.js",
-    "client": "PORT=3000 npm run start --prefix client",
+    "server": "nodemon index.js",
+    "client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
@@ -18,17 +18,15 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
-    "concurrently": "^8.2.2",
-    "cookie-session": "^2.1.0",
-    "express": "^4.19.2",
-    "mongodb": "^6.8.0",
-    "mongoose": "^8.5.4",
-    "nodemon": "^3.1.4",
-    "passport": "^0.7.0",
+    "concurrently": "^8.0.1",
+    "cookie-session": "^2.0.0",
+    "express": "^4.18.2",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^7.8.1",
+    "nodemon": "^2.0.22",
+    "passport": "^0.5.3",
     "passport-google-oauth20": "^2.0.0",
-    "react-stripe-checkout": "^2.6.3",
-    "redux-form": "^8.3.10",
-    "sendgrid": "^5.2.3",
-    "stripe": "^16.8.0"
+    "path-parser": "^6.1.0",
+    "stripe": "^16.7.0"
   }
 }
